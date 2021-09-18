@@ -15,7 +15,8 @@
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
     "express": "^4.17.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "react-bootstrap": "^1.6.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"

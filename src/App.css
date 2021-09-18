@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  border: 2px red solid;
+  width: 300px;
+  
   
 }
 h1{
@@ -17,13 +18,24 @@ h1{
   background: whitesmoke;
   display: flex;
   justify-content: space-around;
-  padding-top : 2%;
-  height: 50px;
+  padding-top : 10px;
+  height: 70px;
   width: 100%;
-  border-radius: 15px;
+  
 }
 .add{
   text-align: center;
+}
+.photo_ingredients{
+  display: flex;
+  justify-content: space-around;
+  
+
+}
+#ingredients{
+  border: 2px whitesmoke solid;
+  border-radius: 15px;
+  height: 200px;
 }
 
 

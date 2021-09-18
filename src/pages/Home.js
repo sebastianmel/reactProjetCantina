@@ -6,9 +6,8 @@ import Navigation from "../components/Navigation"
 const Home = () => {
     return (  
         <div className="home">
-             <h1>Liste des recettes</h1>
-            <br></br>
             <Navigation/>
+            <h1>Liste des recettes</h1>
             <br></br>
             <Recettes/>
         </div>

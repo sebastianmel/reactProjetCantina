@@ -7,11 +7,11 @@ const Add = () => {
 
     const addstudent =() =>
     {
-        if (i < 10)
+        if (i < 15)
         {
             var newRow = document.createElement('tr');
 
-            newRow.innerHTML = '<td> <input type="text" name="Nom'+i+'" ><td> <input type="text" name="Prenom'+i+'" ></td><td><input type="text" name="classe'+i+'" ></td><td><input type="button" id="add_student()" onClick="addstudent()" value="+" /><input type="button" value="-" onclick="removestudent(this.parentNode)"></td>';
+            newRow.innerHTML = '<li> <input type="text" name="Nom'+i+'" ></li>';
 
             document.getElementById('Students').appendChild(newRow);
             i++;
