@@ -8,6 +8,7 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+(with a local server on :localhost:9000)
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
