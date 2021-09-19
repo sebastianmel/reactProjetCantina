@@ -1,4 +1,5 @@
 import axios from "axios";
+import Recettes from "./Recettes";
 
 
 // function de suppression des recettes 
@@ -8,7 +9,9 @@ const Delete = ({id,setRecettes}) => {
         
         axios
             .delete(
-                'http://localhost:9000/api/recipe/' + id
+                'http://localhost:9000/api/recipe/' + id,
+
+                alert('recette a été supprimé avec succès')
             )
             .then(() => {
                 axios

@@ -16,7 +16,7 @@ const Add = () => {
         niveau: "",
         personnes: 1,
         tempsPreparation: 1,
-        ingredients: [{ quantite: 1, unite: "", produit: "" }],
+        ingredients: [[""],[""]],
         etapes: ["",""],
         
     });
@@ -37,15 +37,19 @@ const Add = () => {
 
 
     const AddRecette = () => {
+        const nbrPersonnes = parseInt(data.personnes)
+        setData(prevState => ({ ...prevState, personnes: nbrPersonnes }))
+        const timePrepare = parseInt(data.tempsPreparation)
+        setData(prevState => ({ ...prevState, tempsPreparation: timePrepare }))
 
-        axios.post('http://localhost:9000/api/recipe/'+id ,{
-            titre: useState.titre ,
-            description: "",
-            niveau: "",
-            personnes: 1,
-            tempsPreparation: 1,
-            ingredients: [{ quantite: 1, unite: "", produit: "" }],
-            etapes: ["",""],
+        axios.post('http://localhost:9000/api/recipes' ,{
+            titre: data.titre ,
+            description: data.description,
+            niveau: data.niveau,
+            personnes: data.personnes,
+            tempsPreparation: data.tempsPreparation,
+            ingredients: data.ingredients,
+            etapes: data.etapes,
         })
             .then(function (response) {
                 console.log(response);
@@ -53,6 +57,7 @@ const Add = () => {
             .catch(function (error) {
                 console.log(error);
             });
+        
 
 
 
@@ -96,7 +101,7 @@ const Add = () => {
                     <label for="exampleFormControlInput1">Description</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="courte description du plat" name="description" value={data.description} onChange={ChangeAdd}></input>
                     <label for="exampleFormControlInput1">Temps de préparation</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ecrire en minute" onChange={ChangeAdd} name="tempsPreparation" value={data.tempsPreparation} ></input>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="ecrire en minute" onChange={ChangeAdd} name="tempsPreparation" value={data.tempsPreparation} ></input>
                 </div>
 
                 <div class="form-group">
@@ -106,6 +111,9 @@ const Add = () => {
                         <option>jedi</option>
                         <option>maitre</option>
                     </select>
+
+                    <label for="exampleFormControlInput1"> Nombre de personnes</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="ecrire en minute" onChange={ChangeAdd} name="personnes" value={data.personnes} ></input>
 
                 </div>
                 <div class="form-group">
@@ -136,7 +144,7 @@ const Add = () => {
 
                                 <td>
                                     <label for="exampleFormControlSelect2">Unité</label>
-                                    <select class="form-control form-control-sm">
+                                    <select class="form-control form-control-sm" >
                                         <option>cl</option>
                                         <option>L</option>
                                         <option>g</option>
@@ -183,5 +191,6 @@ export default Add;
 
 
 // Tableau add etapes
+
 
 
