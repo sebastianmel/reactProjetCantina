@@ -27,22 +27,40 @@ function RecetteId() {
     }, []);
     console.log(data);
 
+    function minToHour(minutes){
+		//On test que minutes est bien un nombre entier
+		var Myexp = new RegExp("^[0-9]+$","g");
+		if(Myexp.test(minutes)){
+			var nbHour = parseInt(minutes / 60);
+			var nbminuteRestante = (minutes % 60);
+			if(nbminuteRestante == 0){return(nbHour + "h");}
+			else{return(nbHour + "h" + nbminuteRestante);}
+		} 
+	}
+
     return (
 
         <div className="event">
-            <Navigation />
+            <Navigation /> <br></br>
 
             {data &&
                 <div className="container">
                     <br></br>
                     <div className="jumbotron jumbotron-fluid">
                         <div className="container">
-                            <h1 className="display-4">{data.titre} </h1><small>niveau : {data.niveau}</small>
+                            <h1 className="display-4">{data.titre} </h1> 
+                            <small>Niveau : {data.niveau} | </small>
+                            <small>Pour {data.personnes} personne(s) | </small>
+                            <small >Temps : {minToHour(data.tempsPreparation)} min  </small>
                             <p className="lead">{data.description}</p>
                             <div className="photo_ingredients" >
                                 <img alt="" id="" style={{ width: '25%'}} src={data.photo}></img>
-                                <p className="lead" id="ingredients">{data.ingredients}</p>
+                                <p className="lead" id="ingredients">{data.ingredients.map((i) => {
+                                    return <li key={i[1]}>{i[0]} {i[1]}</li>
+                                })}</p>
                             </div>
+                            <br></br>
+                            <br></br>
                             <h2 className="lead">Etapes :</h2>
                             <p className="lead">{data.etapes}</p>
                         </div>

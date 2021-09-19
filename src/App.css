@@ -1,6 +1,21 @@
+body{
+  background-image: url(./lib/banboo.jpg);
+  background-size: cover;
+}
+.top{
+  color: white;
+}
+form{
+  background: white;
+  opacity: 95%;
+  border-radius: 15px;
+ 
+}
+
 .App {
   display: flex;
   margin: 5%;
+  
   
   height: 100%;
   
@@ -25,16 +40,21 @@
   justify-content: space-around;
   -webkit-flex-wrap: wrap;
   
+  
+  
 }
 h1{
   text-align: center;
 }
 
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
+.container{
+  
+  background: white;
+  opacity: 95%;
+  border-radius: 15px;
+  
+}
 
 .navigation{
   background: whitesmoke;
@@ -44,24 +64,47 @@ h1{
   height: 70px;
   width: 100%;
   
+  
+}
+
+.nav-active, .nav-active1{
+  text-decoration: none;
+  color: black;
 }
 .add{
   text-align: center;
 }
-/* .photo_ingredients{
+
+.photo_ingredients{
   display: flex;
   justify-content: space-around;
-  
+}
 
-} */
 #ingredients{
-  border: 2px whitesmoke solid;
+  border: 2px black solid;
   border-radius: 15px;
-  height: 200px;
+  
+  
+}
+#ingredientsChange{
+ 
+  border-radius: 15px;
+  
+ 
 }
 .form-group{
   width: 500px;
   margin: auto;
+}
+
+.containeChange{
+  display: flex;
+  margin: auto;
+  text-align: center;
+  
+}
+.ChangeInfos{
+  width: 50%;
 }
 
 

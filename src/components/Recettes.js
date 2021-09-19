@@ -33,8 +33,10 @@ function Recettes() {
               <NavLink to={`recette/${recette.id}`} >
                 <button type="button" class="btn btn-outline-secondary">voir</button>
               </NavLink>
-              <button type="button" class="btn btn-outline-light">modifier</button>
-            
+
+              <NavLink to={`change/${recette.id}`} >
+                <button type="button" class="btn btn-outline-light">modifier</button>
+              </NavLink>
             <Delete id={recette.id} setRecettes={setRecettes}/> 
             
 
