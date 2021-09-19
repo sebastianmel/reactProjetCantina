@@ -1,6 +1,8 @@
 import axios from "axios";
 
 
+// function de suppression des recettes 
+
 const Delete = ({id,setRecettes}) => {
     const delRecette = () => {
         

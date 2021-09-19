@@ -5,7 +5,7 @@ import'bootstrap/dist/css/bootstrap.min.css';
 import Delete from './Delete'
 
 
-
+// Page de toutes les recettes
 function Recettes() {
   const [recettes, setRecettes] = useState(null);
   

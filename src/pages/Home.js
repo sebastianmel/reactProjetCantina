@@ -3,6 +3,8 @@ import React from "react";
 import Recettes from "../components/Recettes";
 import Navigation from "../components/Navigation"
 
+
+// home page avec les recettes (components)
 const Home = () => {
     return (  
         <div className="home">

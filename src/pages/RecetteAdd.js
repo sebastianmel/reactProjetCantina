@@ -3,8 +3,13 @@ import { useState } from 'react';
 import axios from "axios";
 import Navigation from "../components/Navigation"
 
-const Add = () => {
 
+
+// function qui ajoute les recettes
+
+
+const Add = () => {
+    // stock les données des recettes dans un format objet pour que axios les envoie a l api
     const [data, setData] = useState({
         titre: "",
         description: "",
@@ -15,7 +20,7 @@ const Add = () => {
         etapes: ["",""],
         
     });
-
+    // ChangeAdd met a jour les valeurs des input
     const ChangeAdd = (e) => {
         console.log(e.target.value);
 
@@ -33,7 +38,7 @@ const Add = () => {
 
     const AddRecette = () => {
 
-        axios.post('http://localhost:9000/api/recipe/:id',{
+        axios.post('http://localhost:9000/api/recipe/'+id ,{
             titre: useState.titre ,
             description: "",
             niveau: "",
@@ -53,7 +58,7 @@ const Add = () => {
 
     }
 
-
+    // Function qui ajoute les champs des ingredients 
     var i = 0;
 
     const addstudent = () => {

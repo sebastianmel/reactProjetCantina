@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-// Fonction qui permet d'etre redirigé vers la page d'un événement ciblé
+// Fonction qui permet de modifier une recette deja existante
 
 function Change() {
 

@@ -39,7 +39,7 @@ function RecetteId() {
 	}
 
     return (
-
+            
         <div className="event">
             <Navigation /> <br></br>
 
