@@ -1,18 +1,38 @@
 .App {
+  display: flex;
+  margin: 5%;
+  
+  height: 100%;
+  
+  
+  
+}
+
+.Card1{
+  border: 2px red solid;
   text-align: center;
   width: 300px;
-  
-  
+  height: 300px;
+  background: whitesmoke;
+  border-radius:15px ;
+  margin: 10px;
+}
+.ContainCard{
+  border: 2px blue solid;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  -webkit-flex-wrap: wrap;
 }
 h1{
   text-align: center;
 }
 
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 .navigation{
   background: whitesmoke;
@@ -26,12 +46,12 @@ h1{
 .add{
   text-align: center;
 }
-.photo_ingredients{
+/* .photo_ingredients{
   display: flex;
   justify-content: space-around;
   
 
-}
+} */
 #ingredients{
   border: 2px whitesmoke solid;
   border-radius: 15px;

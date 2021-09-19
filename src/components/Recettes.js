@@ -21,13 +21,13 @@ function Recettes() {
   return (
     <div className="App">
 
-      <div className="Card1">
+      <div className="ContainCard">
 
         {recettes && recettes.map(recette =>
-          <div key={recette.id}>
+          <div className="Card1" key={recette.id}>
 
             <h2>{recette.titre}</h2>
-            <div><img alt="" id="" style={{ width: '30%' }} src={recette.photo}></img></div>
+            <div><img alt="" id="" style={{ width: '40%' }} src={recette.photo}></img></div>
             <p>{recette.description}</p>
             <div>
               <NavLink to={`recette/${recette.id}`} >
@@ -36,8 +36,11 @@ function Recettes() {
               <button>modifier</button>
             
             <Delete id={recette.id} setRecettes={setRecettes}/>
+
             </div>
+            
           </div>
+          
         )}
       </div>
 
