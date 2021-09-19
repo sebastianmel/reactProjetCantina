@@ -6,47 +6,53 @@ import Navigation from "../components/Navigation"
 const Add = () => {
 
     const [data, setData] = useState({
-        titre:"",
-        description:"",
-        niveau:"",
-        etapes:"",
+        titre: "",
+        description: "",
+        niveau: "",
         personnes: 1,
         tempsPreparation: 1,
-        ingredients: [{quantite:1,unite:"",produit:""}],
+        ingredients: [{ quantite: 1, unite: "", produit: "" }],
+        etapes: ["",""],
+        
     });
 
-    const ChangeAdd =(e)=>{
+    const ChangeAdd = (e) => {
         console.log(e.target.value);
-        
-        const name  = e.target.name;
-        const  value  = e.target.value;
+
+        const name = e.target.name;
+        const value = e.target.value;
         setData(prevState => ({
-          ...prevState,
-          [name]: value
+            ...prevState,
+            [name]: value
         }));
 
 
     }
 
-    
+
 
     const AddRecette = () => {
-        
-        axios.post('http://localhost:9000/api/recipe/:id', {
-            name1: 'valeur1',  
-            name2: 'valeur2',
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-        
-        
-                
+
+        axios.post('http://localhost:9000/api/recipe/:id',{
+            titre: useState.titre ,
+            description: "",
+            niveau: "",
+            personnes: 1,
+            tempsPreparation: 1,
+            ingredients: [{ quantite: 1, unite: "", produit: "" }],
+            etapes: ["",""],
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+
+
     }
-    
+
 
     var i = 0;
 
@@ -54,9 +60,9 @@ const Add = () => {
         if (i < 15) {
             var newRow = document.createElement('tr');
 
-            newRow.innerHTML = '<td> <input type="text" name="Nom'+i+'" ><td> <input type="text" name="Prenom'+i+'" ></td><td><input type="text" name="classe'+i+'" ></td><td><input type="button" id="add_student()" onClick="addstudent()" value="+" /><input type="button" value="-" onclick="removestudent(this.parentNode)"></td>';
-            
-          
+            newRow.innerHTML = '<td> <input type="text" name="Nom' + i + '" ><td> <input type="text" name="Prenom' + i + '" ></td><td><input type="text" name="classe' + i + '" ></td><td><input type="button" id="add_student()" onClick="addstudent()" value="+" /><input type="button" value="-" onclick="removestudent(this.parentNode)"></td>';
+
+
             // newRow.innerHTML = '<tr> <input type="text" name="Nom' + i + '" > </tr>';
 
             document.getElementById('Students').appendChild(newRow);
@@ -85,7 +91,7 @@ const Add = () => {
                     <label for="exampleFormControlInput1">Description</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="courte description du plat" name="description" value={data.description} onChange={ChangeAdd}></input>
                     <label for="exampleFormControlInput1">Temps de préparation</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ecrire en minute" onChange={ChangeAdd}  name="tempsPreparation" value={data.tempsPreparation} ></input>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ecrire en minute" onChange={ChangeAdd} name="tempsPreparation" value={data.tempsPreparation} ></input>
                 </div>
 
                 <div class="form-group">
