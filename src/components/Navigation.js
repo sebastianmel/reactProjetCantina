@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
     return (
         <div className="navigation">
-            <h1 className="lead">EaslyCook</h1>
+            <h1 className="lead" style={{ fontSize: '40px' }}>EaslyCook</h1>
             <NavLink exact to="/" activeClassName="nav-active">
                 Accueil
             </NavLink>

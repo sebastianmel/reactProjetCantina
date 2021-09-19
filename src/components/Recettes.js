@@ -31,13 +31,14 @@ function Recettes() {
             <p>{recette.description}</p>
             <div>
               <NavLink to={`recette/${recette.id}`} >
-                <button>voir</button>
+                <button type="button" class="btn btn-outline-secondary">voir</button>
               </NavLink>
-              <button>modifier</button>
+              <button type="button" class="btn btn-outline-light">modifier</button>
             
-            <Delete id={recette.id} setRecettes={setRecettes}/>
+            <Delete id={recette.id} setRecettes={setRecettes}/> 
+            
 
-            </div>
+            </div> 
             
           </div>
           

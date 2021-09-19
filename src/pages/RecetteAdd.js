@@ -27,76 +27,74 @@ const Add = () => {
 
     return (
         <div className="add">
-            <h1>Liste des recettes</h1>
-            <br></br>
+            
+            
             <Navigation />
             <br></br>
-
+            
             <form>
-  <fieldset>
-    <legend>Ajoutez votre recette</legend>
-
-    
-    <label>Nom de la recette</label>
-    <input type="text" name="name"></input><br></br>
+  <div className="form-group">
+    <label for="exampleFormControlInput1">Nom de la recette</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nom du plat"></input>
+  </div>
   
-  
-    
-  
-    <label>niveau</label><br></br>
-            <select>
-                <option>Padawan</option>
-                <option>Jedi</option>
-                <option>Maitre</option>
-            </select>
-
-            <p> <br></br>
-
-    <section id="champcontent">
-  
-  
-  
-        
-          <div border="1" id="Students">
-              <tr>
-                  <th>Etape(s) de préparation</th>
-                  
-                  
-              </tr>
-              <tbody>
-                  <tr >
-                      <li >
-                          <input type="text" name="Nom"></input>
-                      </li>
-                      
-                      
-                      <td>
-                          <input type="button" id="add_student" onClick={()=>addstudent()} value="+" />
-                          <input type="button" value="-" onclick={()=>removestudent()} />
-                      </td>
-                  </tr>
-              </tbody>
-          </div>
-          </section> <br></br>
-  
-        
-
-    <button>Sign up</button>
-    <button type="reset">Reset form</button>
-  </p>
-    
-  </fieldset>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Niveau de la recette</label>
+    <select class="form-control form-control-sm">
+  <option>padawan</option>
+  <option>jedi</option>
+  <option>maitre</option>
+</select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Etape 1,2,3"></textarea>
+  </div>
+  <button type="button" class="btn btn-outline-success">Ajouter</button>
 </form>
 
             
-
-
-
-
-        </div>
+</div>
 
 
     );
 }
 
 export default Add;
+
+
+
+
+
+
+
+// Tableau add etapes
+
+
+// <section id="champcontent">
+  
+  
+  
+        
+//   <div border="1" id="Students">
+//       <tr>
+//           <th>Etape(s) de préparation</th>
+          
+          
+//       </tr>
+//       <tbody>
+//           <tr >
+//               <li >
+//                   <input type="text" name="Nom"></input>
+                  
+//               </li>
+              
+              
+//               <td>
+//                   <input type="button" id="add_student" onClick={()=>addstudent()} value="+" />
+//                   <input type="button" value="-" onclick={()=>removestudent()} />
+//               </td>
+//           </tr>
+//       </tbody>
+//   </div>
+//   </section>

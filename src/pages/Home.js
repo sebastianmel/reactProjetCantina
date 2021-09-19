@@ -7,7 +7,7 @@ const Home = () => {
     return (  
         <div className="home">
             <Navigation/>
-            <h1>Liste des recettes</h1>
+            <h1 style={{ fontSize: '40px' }}>Liste des recettes</h1>
             <br></br>
             <Recettes/>
         </div>

@@ -37,7 +37,7 @@ function RecetteId() {
                     <br></br>
                     <div className="jumbotron jumbotron-fluid">
                         <div className="container">
-                            <h1 className="display-4">{data.titre} </h1><small>({data.niveau})</small>
+                            <h1 className="display-4">{data.titre} </h1><small>niveau : {data.niveau}</small>
                             <p className="lead">{data.description}</p>
                             <div className="photo_ingredients" >
                                 <img alt="" id="" style={{ width: '25%'}} src={data.photo}></img>

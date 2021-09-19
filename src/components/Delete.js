@@ -20,12 +20,13 @@ const Delete = ({id,setRecettes}) => {
                         )
                     })
             });
+            
     }
     
 
 
     return (
-        <button onClick={delRecette}>
+        <button type="button" class="btn btn-outline-danger" onClick={delRecette}>
             supprimer
         </button>
       );
