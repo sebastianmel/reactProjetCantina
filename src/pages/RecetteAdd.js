@@ -17,7 +17,8 @@ const Add = () => {
         personnes: 1,
         tempsPreparation: 1,
         ingredients: [["30g","chcolat"]],
-        etapes: ["toto", "toto"],
+        etapes: ["etape1","etape2"],
+        photo: "http://fr.web.img2.acsta.net/pictures/18/02/19/16/45/0688641.jpg",
         
     });
     // ChangeAdd met a jour les valeurs des input
@@ -52,6 +53,7 @@ const Add = () => {
             tempsPreparation: parseInt(data.tempsPreparation),
             ingredients: data.ingredients,
             etapes: data.etapes,
+            photo: data.photo,
         })
             .then(function (response) {
                 console.log(response);
