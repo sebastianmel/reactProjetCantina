@@ -16,8 +16,8 @@ const Add = () => {
         niveau: "",
         personnes: 1,
         tempsPreparation: 1,
-        ingredients: [[""],[""]],
-        etapes: ["",""],
+        ingredients: [["30g","chcolat"]],
+        etapes: ["toto", "toto"],
         
     });
     // ChangeAdd met a jour les valeurs des input
@@ -31,23 +31,25 @@ const Add = () => {
             [name]: value
         }));
 
+        console.log(data);
+
 
     }
 
 
 
     const AddRecette = () => {
-        const nbrPersonnes = parseInt(data.personnes)
-        setData(prevState => ({ ...prevState, personnes: nbrPersonnes }))
-        const timePrepare = parseInt(data.tempsPreparation)
-        setData(prevState => ({ ...prevState, tempsPreparation: timePrepare }))
+        // const nbrPersonnes = parseInt(data.personnes)
+        // setData(prevState => ({ ...prevState, personnes: nbrPersonnes }))
+        // const timePrepare = parseInt(data.tempsPreparation)
+        // setData(prevState => ({ ...prevState, tempsPreparation: timePrepare }))
 
         axios.post('http://localhost:9000/api/recipes' ,{
             titre: data.titre ,
             description: data.description,
             niveau: data.niveau,
-            personnes: data.personnes,
-            tempsPreparation: data.tempsPreparation,
+            personnes: parseInt(data.personnes),
+            tempsPreparation: parseInt(data.tempsPreparation),
             ingredients: data.ingredients,
             etapes: data.etapes,
         })
@@ -107,13 +109,14 @@ const Add = () => {
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Niveau de la recette</label>
                     <select class="form-control form-control-sm" onChange={ChangeAdd} name="niveau" value={data.niveau}>
-                        <option>padawan</option>
+                        <option selected ></option>
+                        <option selected value="padawan">padawan</option>
                         <option>jedi</option>
                         <option>maitre</option>
                     </select>
 
                     <label for="exampleFormControlInput1"> Nombre de personnes</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="ecrire en minute" onChange={ChangeAdd} name="personnes" value={data.personnes} ></input>
+                    <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="ecrire en minute" onChange={ChangeAdd} name="personnes" value={data.personnes} ></input>
 
                 </div>
                 <div class="form-group">
