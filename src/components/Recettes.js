@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import'bootstrap/dist/css/bootstrap.min.css';
-import Delete from './Delete'
+import Delete from './Delete';
 
 
 // Page de toutes les recettes
